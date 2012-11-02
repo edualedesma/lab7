@@ -13,9 +13,9 @@ describe Racional do
 		@racional.denominador.should == 3
 	end
 	
-	#it "Debe de estar en su forma reducida" do
-		#????????
-	#end
+	it "Debe de estar en su forma reducida" do
+		@racional.reduce
+	end
 	
 	it "Se debe invocar al metodo num() para obtener el numerador" do
 		@racional.num
@@ -27,7 +27,7 @@ describe Racional do
 	
 	it "Se debe mostar por la consola la fraccion de la forma: a/b, 
 		donde a es el numerador y b el denominador" do
-		@racional.mostrar
+		@racional.to_s
 	end
 	
 	it "Se debe mostar por la consola la fraccion en formato flotante" do
@@ -39,6 +39,18 @@ describe Racional do
 	end
 	
 	it "Se debe calcular el valor absoluto de una fraccion con el metodo abs" do
-		#@racional.abs Racional.new(2,3)
+		@racional.abs
+	end
+	
+	it "Se debe calcular el reciproco de una fraccion con el metodo reciprocal" do
+		@racional.reciprocal
+	end
+	
+	it "Se debe calcular el opuesto de una fraccion con -" do
+		-@racional
+	end
+	
+	it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
+		#@racional + Racional.new(1,2)
 	end
 end
