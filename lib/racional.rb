@@ -93,6 +93,26 @@ class Racional
 	def /(o)
 		(Racional.new(@numerador * o.denom, @denominador * o.num)).reduce
 	end
+	
+	def %(o)
+		(Racional.new(@numerador % @denominador, o.num % o.denom)).reduce
+	end
+	
+	def <(o)
+		(@numerador/@denominador) < (o.num/o.denom)
+	end
+	
+	def >(o)
+		(@numerador/@denominador) > (o.num/o.denom)
+	end
+	
+	def <=(o)
+		(@numerador/@denominador) <= (o.num/o.denom)
+	end
+	
+	def >=(o)
+		(@numerador/@denominador) >= (o.num/o.denom)
+	end
 end
 
 if __FILE__ == $0
@@ -119,4 +139,11 @@ if __FILE__ == $0
 	puts ra2 - ra5
 	puts ra2 * ra5
 	puts ra2 / ra6
+	puts ra2 % ra5
+	puts ra2 < ra5
+	puts ra5 < ra2
+	puts ra5 > ra2
+	puts ra2 <= ra5
+	puts ra2 <= ra2
+	puts ra2 >= ra5
 end

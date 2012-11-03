@@ -67,6 +67,22 @@ describe Racional do
 	end
 	
 	it "Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida" do
+		@racional % Racional.new(1,2)
+	end
 	
+	it "Se debe de poder comprobar si una fracion es menor que otra" do
+		@racional < Racional.new(1,2)
+	end
+	
+	it "Se debe de poder comprobar si una fracion es mayor que otra" do
+		@racional > Racional.new(1,2)
+	end
+	
+	it "Se debe de poder comprobar si una fracion es menor o igual que otra" do
+		@racional <= Racional.new(1,2)
+	end
+	
+	it "Se debe de poder comprobar si una fracion es mayor o igual que otra" do
+		@racional >= Racional.new(1,2)
 	end
 end
