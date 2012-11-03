@@ -51,6 +51,22 @@ describe Racional do
 	end
 	
 	it "Se debe sumar dos fracciones con + y dar el resultado de forma reducida" do
-		#@racional + Racional.new(1,2)
+		@racional + Racional.new(1,2)
+	end
+	
+	it "Se debe restar dos fracciones con - y dar el resultado de forma reducida" do
+		@racional - Racional.new(1,2)
+	end
+	
+	it "Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida" do
+		@racional * Racional.new(1,2)
+	end
+	
+	it "Se debe dividir dos fracciones con / y dar el resultado de forma reducida" do
+		@racional / Racional.new(1,2)
+	end
+	
+	it "Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida" do
+	
 	end
 end

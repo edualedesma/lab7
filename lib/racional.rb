@@ -73,6 +73,26 @@ class Racional
 	def -@
 		Racional.new(-@numerador,-@denominador)
 	end
+	
+	def +(o)
+		denomTotal = @denominador * o.denom
+		(Racional.new(((denomTotal / @denominador) * @numerador) + 
+					 ((denomTotal / o.denom) * o.num), denomTotal)).reduce
+	end
+	
+	def -(o)
+		denomTotal = @denominador * o.denom
+		(Racional.new(((denomTotal / @denominador) * @numerador) - 
+					 ((denomTotal / o.denom) * o.num), denomTotal)).reduce
+	end
+	
+	def *(o)
+		(Racional.new(@numerador * o.num, @denominador * o.denom)).reduce
+	end
+	
+	def /(o)
+		(Racional.new(@numerador * o.denom, @denominador * o.num)).reduce
+	end
 end
 
 if __FILE__ == $0
@@ -81,6 +101,7 @@ if __FILE__ == $0
 	ra3 = Racional.new(-1,2)
 	ra4 = Racional.new(16,12)
 	ra5 = Racional.new(6,3)
+	ra6 = Racional.new(1,5)
     	
 	puts ra == ra2
 	puts ra == ra3
@@ -91,4 +112,11 @@ if __FILE__ == $0
 	puts ra4
 	puts ra4.reduce
 	puts ra5
+	puts ra2 + ra6
+	puts ra2 + ra3
+	puts ra2 + ra5
+	puts ra2 - ra6
+	puts ra2 - ra5
+	puts ra2 * ra5
+	puts ra2 / ra6
 end
